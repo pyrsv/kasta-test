@@ -1,0 +1,40 @@
+{
+  "card": {
+    "name": "card",
+    "placeholder": "XXXX XXXX XXXX XXXX",
+    "label": "Номер картки",
+    "value": "",
+    "isValid": true,
+    "touched": false,
+    "errorMessage": "Невірна картка"
+  },
+  "expiryDate": {
+    "name": "expiryDate",
+    "placeholder": "ММ / РР",
+    "label": "Термін дії",
+    "value": "",
+    "isValid": true,
+    "touched": false,
+    "errorMessage": "Невірний термін дії"
+  },
+  "cardHolder": {
+    "name": "cardHolder",
+    "placeholder": "CARDHOLDER NAME ",
+    "label": "Власник картки",
+    "value": "",
+    "isValid": true,
+    "touched": false,
+    "errorMessage": "Введіть ПІБ власника картки"
+  },
+  "CVV": {
+    "name": "CVV",
+    "placeholder": "XXX",
+    "label": "CVV",
+    "value": "",
+    "isValid": true,
+    "touched": false,
+    "errorMessage": "Введiть CVV/CVC"
+  }
+
+
+}

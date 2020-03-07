@@ -1,0 +1,40 @@
+.FormContainer {
+	max-width: 470px;
+	padding: 0 15px 15px;
+
+}
+
+.PaymentForm {
+
+
+	&__Body {
+		padding: 15px;
+	}
+
+	&__Footer {
+		text-align: center;
+		border-top: 1px dashed #ced6e0;
+	}
+
+	&__actions {
+		padding: 16px 0 32px;
+	}
+}
+
+.FormRow {
+	display: flex;
+}
+
+.FormCol {
+
+	&--wide {
+		width: 65%;
+		margin: 0 0 15px;
+	}
+
+	&--narrow {
+		width: 35%;
+		margin: 0 0 15px 8px;
+
+	}
+}

@@ -1,0 +1,16 @@
+.CheckboxWrapper {
+	margin-top: 16px;
+}
+
+.Checkbox {
+	display: inline-flex;
+	align-items: center;
+	
+	&__input {
+		margin: 2px 3px 0 0 ;
+	}
+	
+	&__text {
+		cursor: pointer;
+	}
+}

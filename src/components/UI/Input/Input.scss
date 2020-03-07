@@ -1,0 +1,45 @@
+.FormControl {
+	text-align: left;
+	font-size: 0;
+	position: relative;
+
+	&__Label {
+		display: inline-block;
+		font-size: 16px;
+		color: #1a3b5d;
+		margin: 4px 0;
+	}
+
+	&__Input {
+		width: 100%;
+		border-radius: 5px;
+		padding: 6px 12px;
+		border: 1px solid #ced6e0;
+		outline: none;
+		box-sizing: border-box;
+
+		&::placeholder {
+			color: #ced6e0;
+		}
+
+		&:focus, &:active {
+			background-color: #fdf8e4;
+			border-color: #3d9cff;
+			box-shadow: 0 10px 20px -13px rgba(32, 56, 117, 0.35);
+		}
+
+		&__invalid {
+			border-color: #ff4a62;
+		}
+	}
+
+	&__ErrorMessage {
+		position: absolute;
+		display: inline-block;
+		color: #ff4a62;
+		font-size: 12px;
+		left: 0;
+		bottom: -15px;
+		//margin: 0 3px;
+	}
+}
