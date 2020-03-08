@@ -1,0 +1,21 @@
+.Tooltip {
+	max-width: 200px;
+	box-shadow: 0 3px 15px -6px rgba(32, 56, 117, 0.4);
+
+}
+
+.TooltipWrapper {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+.TooltipGlyph {
+	display: inline-block;
+	border-radius: 50%;
+	color: #ffffff;
+	background-color: #ced6e0;
+	width: 16px;
+	line-height: 16px;
+	font-weight: bold;
+	text-align: center;
+}

@@ -1,0 +1,67 @@
+.Modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 8px;
+	text-align: center;
+	max-width: 500px;
+	overflow: hidden;
+	z-index: 100;
+
+	&__Header {
+		display: flex;
+		justify-content: space-between;
+		padding: 8px 16px;
+		background-color: #333333;
+	}
+
+	&__Body {
+		padding: 16px;
+		background-color: #ffffff;
+	}
+
+	&__Footer {
+		padding: 16px;
+	}
+}
+
+.ModalTotal {
+	text-align: right;
+	color: #ffffff;
+	width: 100px;
+
+	&__Label {
+		display: block;
+		font-size: 14px;
+		color: #777777;
+	}
+
+	&__Value {
+		display: block;
+		font-size: 22px;
+		color: #ced6e0
+	}
+}
+
+.Backdrop {
+	//display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0, .4);
+	z-index: 0;
+	transition: all .3s;
+}
+
+.Backdrop.open {
+	display: block;
+}
+
+
+//.KastaLogo svg {
+//	 height: 32px;
+//	 fill: #ffffff;
+// }

@@ -1,8 +1,8 @@
 import React from 'react';
 import MaskedInput from 'react-text-mask';
+import Tooltip from '../Tooltip/Tooltip';
 
 import './Input.scss'
-
 
 const Input = props => {
   const {mask = [], control: {name, value, label, placeholder, errorMessage, isValid, touched}} = props.config;
@@ -20,6 +20,10 @@ const Input = props => {
         className={'FormControl__Label'}
       >
         {label}
+        <Tooltip
+          name={name}
+          tip={'Фамілія і ім´я людини на яке випущена картка. Для іменних карток — нанесено на картку'}
+        />
       </label>
       {localMask.length > 0
         ? <MaskedInput

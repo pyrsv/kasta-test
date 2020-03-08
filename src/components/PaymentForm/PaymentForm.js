@@ -79,7 +79,7 @@ const PureForm = props => {
   };
 
   return (
-    <div className="Form-container">
+    <div className="FormContainer">
       <form className='PaymentForm'>
         <div className="PaymentForm__Body">
           <div className="FormRow">
