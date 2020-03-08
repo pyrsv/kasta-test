@@ -2,6 +2,10 @@ import React, {useState} from 'react';
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 import Checkbox from '../UI/Checkbox/Checkbox';
+import Countdown from '../Countdown/Countdown';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCreditCard, faCircle} from '@fortawesome/free-solid-svg-icons'
+
 import * as controls from '../../data/payment-controls'
 import * as validation from '../../data/validation-service'
 
@@ -12,10 +16,10 @@ const PaymentForm = props => {
 
   const [{form, form: {card, expiryDate, cardHolder, CVV}}, setForm] = useState({
     form: {
-      card: controls.card,
-      expiryDate: controls.expiryDate,
-      cardHolder: controls.cardHolder,
-      CVV: controls.CVV
+      card: {...controls.card},
+      expiryDate: {...controls.expiryDate},
+      cardHolder: {...controls.cardHolder},
+      CVV: {...controls.CVV}
     }
   });
 
@@ -28,7 +32,6 @@ const PaymentForm = props => {
     const currentControl = currentForm[control];
     currentControl.touched = true;
     currentControl.value = event.target.value;
-    console.log(currentControl.value);
     setForm({
       form: currentForm
     });
@@ -37,15 +40,13 @@ const PaymentForm = props => {
   const handleValidate = (control) => {
     const value = form[control].value.split(' ').join('');
     const validationRegex = validation.default[control].regex;
-
     const currentForm = {...form};
     const currentControl = currentForm[control];
+
     currentControl.isValid = false;
     validationRegex.forEach(regex => {
-      console.log(new RegExp(regex).test(value), 'test from blur');
       //eslint-disable-next-line
       new RegExp(regex).test(value) ? currentControl.isValid = true : null;
-
     });
 
     setForm({
@@ -73,11 +74,17 @@ const PaymentForm = props => {
         }, {}),
         rememberCard
       };
+      setForm({
+        form: {
+          card: {...controls.card},
+          expiryDate: {...controls.expiryDate},
+          cardHolder: {...controls.cardHolder},
+          CVV: {...controls.CVV}
+        }
+      });
       setSubmitted(true);
-      console.log(formData);
 
-    } else {
-      console.log('invalid form');
+      console.log(formData);
     }
   };
 
@@ -93,6 +100,20 @@ const PaymentForm = props => {
           />
         </div>
         : <form className='PaymentForm'>
+          <div className="PaymentForm__Header">
+            <div className="Card">
+              <p className="Card__Heading">
+                <FontAwesomeIcon className={'Card__Circle'} icon={faCircle}/>
+                Нова картка
+              </p>
+              <p className="Card__Description">
+                Visa, Mastercard
+              </p>
+              <FontAwesomeIcon className={'Card__CardIcon'} icon={faCreditCard}/>
+
+            </div>
+
+          </div>
           <div className="PaymentForm__Body">
             <div className="FormRow">
               <div className="FormCol--wide">
@@ -153,6 +174,10 @@ const PaymentForm = props => {
               <Button
                 text={`Сплатити ${props.value} UAH`}
                 onClick={handleSubmit}
+              />
+              <Countdown
+                text={'Час до завершення платежу'}
+                final={+new Date() + 900 * 1000}
               />
             </div>
           </div>

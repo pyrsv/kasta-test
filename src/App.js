@@ -3,7 +3,7 @@ import PaymentForm from './components/PaymentForm/PaymentForm'
 import Button from './components/UI/Button/Button';
 import Modal from './components/Modal/Modal';
 
-import './App.css';
+import './App.scss';
 
 const App = () => {
   const [isModal, setModal] = useState(false);
