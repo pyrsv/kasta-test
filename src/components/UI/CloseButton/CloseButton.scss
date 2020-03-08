@@ -1,0 +1,13 @@
+.CloseBtn {
+	position: absolute;
+	font-weight: bold;
+	font-size: 36px;
+	color: #e3e3e3;
+	right: -40px;
+	transition: color .3s ease;
+	cursor: pointer;
+
+	&:hover {
+		color: #ffffff;
+	}
+}

@@ -28,6 +28,10 @@
 			box-shadow: 0 10px 20px -13px rgba(32, 56, 117, 0.35);
 		}
 
+		&:hover {
+			border-color: #3d9cff;
+		}
+
 		&__invalid {
 			border-color: #ff4a62;
 		}

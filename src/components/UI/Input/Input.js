@@ -5,7 +5,7 @@ import Tooltip from '../Tooltip/Tooltip';
 import './Input.scss'
 
 const Input = props => {
-  const {mask = [], control: {name, value, label, placeholder, errorMessage, isValid, touched}} = props.config;
+  const {mask = [], control: {name, value, label, placeholder, errorMessage, isValid, touched, tip}} = props.config;
 
   const localMask = mask.map(regexStr => {
     return regexStr.split('').includes('\\') ? new RegExp(regexStr) : regexStr;
@@ -20,10 +20,13 @@ const Input = props => {
         className={'FormControl__Label'}
       >
         {label}
+        {tip &&
         <Tooltip
           name={name}
-          tip={'Фамілія і ім´я людини на яке випущена картка. Для іменних карток — нанесено на картку'}
+          tip={tip}
         />
+        }
+
       </label>
       {localMask.length > 0
         ? <MaskedInput

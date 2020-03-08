@@ -3,13 +3,13 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	border-radius: 8px;
 	text-align: center;
 	max-width: 500px;
-	overflow: hidden;
 	z-index: 100;
+	width: 500px;
 
 	&__Header {
+		border-radius: 8px 8px 0 0;
 		display: flex;
 		justify-content: space-between;
 		padding: 8px 16px;
@@ -17,19 +17,20 @@
 	}
 
 	&__Body {
-		padding: 16px;
 		background-color: #ffffff;
+		padding: 16px 16px 50px;
 	}
 
 	&__Footer {
-		padding: 16px;
+		background-color: #ffffff;
+		border-radius: 0 0 8px 8px;
 	}
 }
 
 .ModalTotal {
 	text-align: right;
 	color: #ffffff;
-	width: 100px;
+	width: 150px;
 
 	&__Label {
 		display: block;
@@ -43,6 +44,34 @@
 		color: #ced6e0
 	}
 }
+
+.FooterPayment {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgba(163, 163, 163, 0.1);
+	padding: 15px 0;
+
+	&__Image {
+		height: 30px;
+		filter: opacity(.4);
+	}
+}
+
+.FooterLogo {
+	text-align: center;
+	background-color: #333333;
+	padding: 10px 0;
+	overflow: hidden;
+	border-radius: 0 0 8px 8px;
+
+}
+
+.ModalLogo {
+	height: 40px;
+}
+
+
 
 .Backdrop {
 	//display: none;

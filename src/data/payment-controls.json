@@ -24,7 +24,8 @@
     "value": "",
     "isValid": true,
     "touched": false,
-    "errorMessage": "Введіть ПІБ власника картки"
+    "errorMessage": "Введіть ПІБ власника картки",
+    "tip": "Прізвище та ім´я людини на яку випущена картка. Для іменних карток — нанесено на картку"
   },
   "CVV": {
     "name": "CVV",
@@ -33,8 +34,8 @@
     "value": "",
     "isValid": true,
     "touched": false,
-    "errorMessage": "Введiть CVV/CVC"
+    "errorMessage": "Введiть CVV/CVC",
+    "tip": "Останні три цифри на зворотній строні картки"
   }
-
 
 }

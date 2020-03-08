@@ -1,4 +1,5 @@
 import React from 'react';
+import Tooltip from '../Tooltip/Tooltip';
 
 import './Checkbox.scss'
 
@@ -19,6 +20,12 @@ const Checkbox = props => {
         />
         <span className={'Checkbox__text'}>
           {props.text}
+          {props.tip &&
+            <Tooltip
+              name={props.name}
+              tip={props.tip}
+            />
+          }
         </span>
       </label>
     </div>

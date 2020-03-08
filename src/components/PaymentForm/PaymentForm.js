@@ -8,7 +8,7 @@ import * as validation from '../../data/validation-service'
 import './PaymentForm.scss'
 
 
-const PureForm = props => {
+const PaymentForm = props => {
 
   const [{form, form: {card, expiryDate, cardHolder, CVV}}, setForm] = useState({
     form: {
@@ -20,6 +20,8 @@ const PureForm = props => {
   });
 
   const [rememberCard, setRememberCard] = useState(false);
+
+  const [isSubmitted, setSubmitted] = useState(false);
 
   const handleControlsChange = (control, event) => {
     const currentForm = {...form};
@@ -71,6 +73,7 @@ const PureForm = props => {
         }, {}),
         rememberCard
       };
+      setSubmitted(true);
       console.log(formData);
 
     } else {
@@ -80,73 +83,84 @@ const PureForm = props => {
 
   return (
     <div className="FormContainer">
-      <form className='PaymentForm'>
-        <div className="PaymentForm__Body">
-          <div className="FormRow">
-            <div className="FormCol--wide">
-              <Input
-                config = {{
-                  control: card,
-                  mask: validation.card.mask
-                }}
-                onChange={handleControlsChange.bind(null, card.name)}
-                onBlur={handleValidate.bind(null, card.name)}
-              />
-            </div>
-            <div className="FormCol--narrow">
-              <Input
-                config={{
-                  control: expiryDate,
-                  mask: validation.expiryDate.mask
-                }}
-                onChange={handleControlsChange.bind(null, expiryDate.name)}
-                onBlur={handleValidate.bind(null, expiryDate.name)}
-              />
-            </div>
-          </div>
-          <div className="FormRow">
-            <div className="FormCol--wide">
-              <Input
-                config={{
-                  control: cardHolder,
-                  mask: validation.cardHolder.mask
-                }}
-                onChange={handleControlsChange.bind(null, cardHolder.name)}
-                onBlur={handleValidate.bind(null, cardHolder.name)}
-              />
-            </div>
-            <div className="FormCol--narrow">
-              <Input
-                config={{
-                  control: CVV,
-                  mask: validation.CVV.mask
-                }}
-                onChange={handleControlsChange.bind(null, CVV.name)}
-                onBlur={handleValidate.bind(null, CVV.name)}
-              />
-            </div>
-          </div>
-        </div>
-        <div className='PaymentForm__Footer'>
-          <Checkbox
-            name={'remember'}
-            checked={rememberCard}
-            text={'Запам\'ятати цю картку'}
-            onChange={() => {
-              setRememberCard(!rememberCard)
-            }}
+      {isSubmitted
+        ?
+        <div>
+          <p>Оплата пройшла успішно</p>
+          <Button
+            text='Закрити'
+            onClick={props.closeHandler}
           />
-          <div className="PaymentForm__actions">
-            <Button
-              text={'Сплатити 2300 UAH'}
-              onClick={handleSubmit}
-            />
-          </div>
         </div>
+        : <form className='PaymentForm'>
+          <div className="PaymentForm__Body">
+            <div className="FormRow">
+              <div className="FormCol--wide">
+                <Input
+                  config={{
+                    control: card,
+                    mask: validation.card.mask
+                  }}
+                  onChange={handleControlsChange.bind(null, card.name)}
+                  onBlur={handleValidate.bind(null, card.name)}
+                />
+              </div>
+              <div className="FormCol--narrow">
+                <Input
+                  config={{
+                    control: expiryDate,
+                    mask: validation.expiryDate.mask
+                  }}
+                  onChange={handleControlsChange.bind(null, expiryDate.name)}
+                  onBlur={handleValidate.bind(null, expiryDate.name)}
+                />
+              </div>
+            </div>
+            <div className="FormRow">
+              <div className="FormCol--wide">
+                <Input
+                  config={{
+                    control: cardHolder,
+                    mask: validation.cardHolder.mask
+                  }}
+                  onChange={handleControlsChange.bind(null, cardHolder.name)}
+                  onBlur={handleValidate.bind(null, cardHolder.name)}
+                />
+              </div>
+              <div className="FormCol--narrow">
+                <Input
+                  config={{
+                    control: CVV,
+                    mask: validation.CVV.mask
+                  }}
+                  onChange={handleControlsChange.bind(null, CVV.name)}
+                  onBlur={handleValidate.bind(null, CVV.name)}
+                />
+              </div>
+            </div>
+          </div>
+          <div className='PaymentForm__Footer'>
+            <Checkbox
+              name={'remember'}
+              checked={rememberCard}
+              text={'Запам\'ятати цю картку'}
+              onChange={() => {
+                setRememberCard(!rememberCard)
+              }}
+              tip={'Наступного разу можна буде вибрати збережену карту i оплатити вводячи тільки CVV'}
+            />
+            <div className="PaymentForm__actions">
+              <Button
+                text={`Сплатити ${props.value} UAH`}
+                onClick={handleSubmit}
+              />
+            </div>
+          </div>
 
-      </form>
+        </form>
+      }
     </div>
   )
 };
 
-export default PureForm
+export default PaymentForm
