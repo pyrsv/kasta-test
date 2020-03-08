@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/kasta-test/static/css/main.d4d2c9d9.chunk.css",
+    "main.js": "/kasta-test/static/js/main.17451c0e.chunk.js",
+    "main.js.map": "/kasta-test/static/js/main.17451c0e.chunk.js.map",
+    "runtime-main.js": "/kasta-test/static/js/runtime-main.e7644efe.js",
+    "runtime-main.js.map": "/kasta-test/static/js/runtime-main.e7644efe.js.map",
+    "static/js/2.8a783dfa.chunk.js": "/kasta-test/static/js/2.8a783dfa.chunk.js",
+    "static/js/2.8a783dfa.chunk.js.map": "/kasta-test/static/js/2.8a783dfa.chunk.js.map",
+    "index.html": "/kasta-test/index.html",
+    "precache-manifest.a3ca542001a50aac1542d245f432caef.js": "/kasta-test/precache-manifest.a3ca542001a50aac1542d245f432caef.js",
+    "service-worker.js": "/kasta-test/service-worker.js",
+    "static/css/main.d4d2c9d9.chunk.css.map": "/kasta-test/static/css/main.d4d2c9d9.chunk.css.map",
+    "static/js/2.8a783dfa.chunk.js.LICENSE.txt": "/kasta-test/static/js/2.8a783dfa.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/kasta-test/static/media/logo.063ecc74.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e7644efe.js",
+    "static/js/2.8a783dfa.chunk.js",
+    "static/css/main.d4d2c9d9.chunk.css",
+    "static/js/main.17451c0e.chunk.js"
+  ]
+}
